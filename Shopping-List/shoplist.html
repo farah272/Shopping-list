@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+
+    <div class="main-div">
+
+      <header class="main-header">
+          <img src="groceries-pink.jpg" alt="">
+      </header>
+      
+      <main id="shopping-list" v-cloak>
+
+        <header>
+          <h1>{{head}}</h1>
+          <button  v-if="editing" @click="doDelete"  class="btn-primary del-Btn ">-</button>
+          <button v-else="editing"  @click="doAdd"  class="btn-primary">+</button>
+        </header>
+        
+        <section v-if="editing" id="item-list">
+          <!--itemes section -->
+          <div id="div-1">
+              <input @keyup.enter="additem" v-model="newItem" type="text" placeholder="ADD NEW ITEM ">
+              <button v-if="items.length !== 0" @click="editItem"  class="btn-primary del-iteme">-</button>
+              <button :disabled="newItem.length === 0" @click="additem" class="btn-primary items-btn">+</button>
+
+            <ul>
+              <li v-for="item in reversedItems">{{item.toUpperCase()}}</li>
+            </ul>
+            <p v-if="items.length === 0">You bought all your items!</p>
+          </div>
+
+          <span></span>
+          <!--websites section -->
+
+          <div id="div-2">
+            <input @keyup.enter="addwebsite" v-model="newsite" type="text" placeholder="ADD SHOPPING WEBSITE">
+            <button v-if="website.length !== 0" @click="editwebsite"  class="btn-primary del-iteme">-</button>
+            <button :disabled="newsite.length === 0" @click="addwebsite" class="btn-primary items-btn">+</button>
+            <ul>
+              <li v-for="sites in reversedWebsites"><a :href="website">{{sites}}</a></li>
+            </ul>
+          </div>
+        </section>  
+      </main>  
+    </div>
+
+  </body>
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <script>
+    Vue.createApp({
+      data(){
+        return{
+          head:'SHOPPING LIST' ,
+          items:[] ,
+          newItem:"" ,
+          website:[],
+          newsite:"" ,
+          editing:false,
+        }
+      },
+      
+      methods:{
+        additem(){
+          this.items.push(this.newItem)
+          this.newItem=""
+        },
+        editItem(){
+          this.items.pop(this.newItem)
+          
+        },
+        addwebsite(){
+          this.website.push(this.newsite)
+          this.newsite=""
+        },
+        editwebsite(){
+          this.website.pop(this.newsite)
+        },
+        
+        doAdd(){
+          this.editing =true
+          this.newItem="" 
+        },
+        doDelete(){
+          this.editing =false
+        }
+        
+      },
+
+      computed:{
+        reversedItems(){
+          return [...this.items].reverse()
+        },
+        reversedWebsites(){
+          return [...this.website].reverse()
+        }
+      }
+      
+
+    }).mount('#shopping-list')
+
+  </script>
+</html>

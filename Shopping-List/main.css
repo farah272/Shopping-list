@@ -1,0 +1,129 @@
+/* GENERAL SETTING*/
+[v-cloak]{
+  display: none;
+}
+body{
+  height: 100vh;
+}
+input{
+  margin-top: 2em;
+  width: 65%;
+  height: 23px;
+  color:#454545;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 2px solid rgb(255, 81, 107);
+}
+ul li{
+  color: #4a790d;
+  font-weight: 600;
+}
+
+/* LINKS*/
+a{
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+}
+a:link {
+  color: rgb(9, 115, 37);
+}
+
+.main-div{
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 80vh;
+  width:780px ;
+  margin-inline:auto ;
+}
+
+.main-header img{
+  width: 100%;
+  object-fit:cover;
+  height: 200px;
+}
+/* MAIN */
+#shopping-list{
+  margin-inline:auto ;
+  background-color: white;
+  color:  #454545;
+  border: 2px solid #fe9f22;
+  border-radius: 20px;
+  max-width: 777px;
+  line-height: 1.5;
+  position: absolute;
+  top: 180px;
+  left: 0;
+  right: 0;
+  
+}
+#shopping-list header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 2em ;
+
+}
+/* BUTTONS */
+.btn-primary{
+  padding: 0 0.3em;
+  background-color: #fe9f22;
+  color:white;
+  font-size: 2rem;
+  font-weight: 700;
+  max-height: 40px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+}
+.del-Btn{
+  background-color: #ef3232;
+  padding:0 0.4em;
+}
+
+.del-iteme{
+  background-color: #f22b3c;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding:0 0.4em ;
+  margin-left: 1em;
+
+}
+
+.items-btn{
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: #32CD32;
+  margin-left: 0.8em;
+}
+
+
+#item-list{
+  display: flex;
+  justify-content: space-around;
+  background-color: 	rgb(245, 245, 245);
+  border-radius:20px;
+}
+#div-1,#div-2{
+  width: 40%;
+}
+/* TEXT EDITE */
+::placeholder {
+  color: #ef3232;
+  font-weight: 700;
+  padding: 1em;
+}
+
+#item-list span{
+  width: 2px;
+  height: 200px;
+  background-color: #454545;
+}
+#div-1 p{
+  text-align:center;
+  color: #4a790d;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 2em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+}
